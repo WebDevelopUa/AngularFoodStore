@@ -2,16 +2,21 @@
 ==========
 ##### Angular requires Node.js version 8.x or 10.x.
 
-* To check your version, run node -v in a terminal/console window.
-  
-* To get Node.js, go to [nodejs.org](https://nodejs.org).
+* To check your version, run in a terminal/console window: 
 
-##Install/Upgrade NPM & Angular CLI globally
+    ``` node -v ``` 
+
+  
+* To get Node.js, go to:
+
+[nodejs.org](https://nodejs.org)
+
+## Install/Upgrade NPM & Angular CLI globally
 
     npm install npm@latest -g
     npm install -g @angular/cli
 
-##App Installing process / Create a workspace and initial application
+## App Installing process / Create a workspace and initial application
 
     node -v
     npm -v
@@ -23,14 +28,14 @@
     ng new my-app  (if App is not created)
     
     
-####Start the development server / Run App
+#### Start the development server / Run App
 
     cd my-app
     
     ng serve --open
-    Local: http://localhost:4200/
+   GoTo=>  [localhost:4200](http://localhost:4200/)
     
     or
     
     npm start
-    Local: http://localhost:3000
+   GoTo=>  [localhost:3000](http://localhost:3000/)
