@@ -7,7 +7,7 @@
     ``` node -v ``` 
 
   
-* To get Node.js, go to:
+* To get *Node.js*, go to:
 
 [nodejs.org](https://nodejs.org)
 
@@ -34,7 +34,7 @@
     
    GoTo=>  [localhost:4200](http://localhost:4200/)
     
-#### Edit Angular component (root component)
+#### Edit Angular component *(root component)*
 
     cd health-food-store/src/app/
     
@@ -47,7 +47,7 @@
     npm install --save hammerjs
     npm install --save @angular/flex-layout
     
-   Next, include the following into the <head> of index.html to make use of Material Design icons:
+   Next, include the following into the <head> of *index.html* to make use of Material Design icons:
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     
@@ -84,12 +84,12 @@
     
     . . . 
    
-   Open app.component.html
+   Open *app.component.html*
     
     <mat-toolbar color="primary"> <span>Logo</span> </mat-toolbar>
     
        
-   Open styles.scss (https://material.angular.io/guide/getting-started)
+   Open *styles.scss* (https://material.angular.io/guide/getting-started)
     
     @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
     @import '~@angular/material/prebuilt-themes/indigo-pink.css';
@@ -97,9 +97,84 @@
     @import '~@angular/material/prebuilt-themes/purple-green.css';
     
     
+#### Create **Menu component**
+
+    ng generate component menu
+    
+   Open *app.component.html*
+    
+    <app-menu></app-menu> 
+    
+   Create a folder named *shared* under the *src/app* folder. To this folder, add a file named *dish.ts* with the following code:
+    
+    export class Dish {
+        name: string;
+        image: string;
+        category: string;
+        label: string;
+        price: string;
+        description: string;
+    }
+    
+   Update *menu.component.ts* as follows to add in the data for four menu items:
+    
+    . . .
+    import { Dish } from '../shared/dish';
+    . . .
+    
+    export class MenuComponent implements OnInit {
+    
+      dishes: Dish[] = [
+        {
+          name: 'Kiwi',
+          image: '/assets/images/kiwi.png',
+          category: 'fruits',
+          label: '',
+          price: '2.99',
+          description: 'Delicious eco friendly fruit for your family'
+        }
+       ];
+    . . .
+    }
+    
+   Update *menu.component.html* template as follows:
+   
+    <div class="container"
+         fxLayout="column"
+         fxLayoutGap="10px">
+    
+      <mat-list fxFlex>
+        <mat-list-item *ngFor="let dish of dishes">
+          <img matListAvatar src={{dish.image}} alt={{dish.name}}>
+          <h1 matLine> {{dish.name}} </h1>
+          <p matLine>
+            <span> {{dish.description}} </span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+    
+    </div>
+    
+   Update *app.module.ts* as follows:
+   
+    . . .
+    
+    import { MatListModule } from '@angular/material/list';
+    
+    . . .
+    
+      imports: [
+        . . .,
+        MatListModule,
+        . . .
+      ],
+    
+    . . .
+   
     
     
-#### .gitignore file
+        
+#### *.gitignore* file
 
     template
     

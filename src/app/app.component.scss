@@ -1,21 +1,11 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-h1, h2 {
-  color: #7faa61;
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: capitalize;
+.toolbar {
+  display: flex;
+  margin: auto;
+  border-radius: 40px;
 }
 
-h1 {
-  font-size: 250%;
-}
-
-h2 {
-  font-size: 200%;
-}
-
-a {
-  text-decoration: none;
+.brand  {
+  margin: 10px 20px;
 }
 
 .brand:active {
