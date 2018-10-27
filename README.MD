@@ -25,9 +25,16 @@
     ng new health-food-store --style=scss  (if App is not created)
     
     
-#### Start the development server / Run App
+#### Start the development server / Run App / Serve the application
 
-    cd health-food-store
+    cd health-food-store && ng serve -o
     
     ng serve --open
+    
    GoTo=>  [localhost:4200](http://localhost:4200/)
+    
+#### Edit  Angular component (root component)
+
+    cd health-food-store/src/app/
+    
+    
