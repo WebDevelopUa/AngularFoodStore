@@ -1,6 +1,22 @@
 <div class="container"
      fxLayout="column"
      fxLayoutGap="10px">
+  <div fxFlex>
+    <mat-grid-list cols="3" rowHeight="600px">
+      <mat-grid-tile *ngFor="let dish of dishes">
+        <img height="600px" src={{dish.image}} alt={{dish.name}}>
+        <mat-grid-tile-footer>
+          <h1 matLine>{{dish.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
 
   <mat-list fxFlex>
     <mat-list-item *ngFor="let dish of dishes">

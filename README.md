@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-===================================================================
+=================================================================================
 
 ![Angular App](https://next.angular.io/assets/images/logos/angular/logo-nav@2x.png "Angular App")    [Application](https://next.angular.io/docs)
 ==========
@@ -203,12 +203,58 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     . . .
    
     
+   
+#### Updating **Menu component**
+
+   Open *menu.component.html* and update its content as follows:
     
+    . . .
+    
+      <div fxFlex>
+        <div>
+          <h3>Menu</h3>
+          <hr>
+        </div>
+      </div>
+    
+      <div fxFlex>
+        <mat-grid-list cols="2" rowHeight="200px">
+          <mat-grid-tile *ngFor="let dish of dishes">
+            <img height="200px" src={{dish.image}} alt={{dish.name}}>
+            <mat-grid-tile-footer>
+              <h1 matLine>{{dish.name | uppercase}}</h1>
+            </mat-grid-tile-footer>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    
+    . . .
+    
+   Open *app.module.ts* and update it as follows:
+   
+    . . .
+    
+    import { MatGridListModule } from '@angular/material/grid-list';
+    import { MatCardModule } from '@angular/material/card';
+    import { MatButtonModule } from '@angular/material/button';
+    
+    . . .
+    
+      imports: [
+        . . .,
+        MatGridListModule,
+        MatCardModule,
+        MatButtonModule,
+        . . .
+      ],
+    
+    . . .
+    
+        
+           
         
 #### *.gitignore* file
 
-    template
-    
     -
     
     node_modules
