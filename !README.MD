@@ -38,6 +38,65 @@
 
     cd health-food-store/src/app/
     
+        
+#### Configuring Angular Application
+
+    npm install @angular/material --save
+    npm install @angular/cdk --save
+    npm install --save @angular/animations
+    npm install --save hammerjs
+    npm install --save @angular/flex-layout
+    
+   Next, include the following into the <head> of index.html to make use of Material Design icons:
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    
+   src/app/app.module.ts
+    
+    . . . 
+    
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+    import { MatToolbarModule } from '@angular/material/toolbar'; 
+    import { FlexLayoutModule } from '@angular/flex-layout';
+    
+    . . . 
+    
+    import 'hammerjs';
+    
+    @NgModule({
+      
+      . . . 
+      
+      imports: [ 
+        
+        . . .,
+        
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        FlexLayoutModule
+        
+      ], 
+        
+        . . . 
+      
+      
+    }) 
+    
+    . . . 
+   
+   Open app.component.html
+    
+    <mat-toolbar color="primary"> <span>Logo</span> </mat-toolbar>
+    
+       
+   Open styles.scss (https://material.angular.io/guide/getting-started)
+    
+    @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+    @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+    @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+    @import '~@angular/material/prebuilt-themes/purple-green.css';
+    
+    
     
     
 #### .gitignore file
