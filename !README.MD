@@ -221,6 +221,54 @@
     
         
         
+#### Add a **Card Component**
+
+   Update the *menu.component.ts* file as follows to move the details of the dishes into a constant
+    
+     . . .
+     
+     const DISHES: Dish[] = [
+     . . .
+     
+     ];
+     
+     . . .
+     
+     export class MenuComponent implements OnInit {
+    
+      dishes = DISHES;
+    
+      selectedDish = DISHES[0];
+    
+     . . .
+     
+     }       
+     
+     
+   Update the *menu.component.html* template to display the details of a selected dish using the Material Card component as follows:
+     
+   . . .
+   
+     <div fxFlex *ngIf="selectedDish">
+       <mat-card>
+         <mat-card-header>
+           <mat-card-title>
+             <h3>{{selectedDish.name | uppercase}}</h3>
+           </mat-card-title>
+         </mat-card-header>
+         <img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>
+         <mat-card-content>
+           <p>{{selectedDish.description}}
+           </p>
+         </mat-card-content>
+         <mat-card-actions>
+           <button mat-button>LIKE</button>
+           <button mat-button>SHARE</button>
+         </mat-card-actions>
+       </mat-card>
+     </div>  
+     
+        
 #### *.gitignore* file
 
     -
