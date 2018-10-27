@@ -22,20 +22,12 @@
     npm -v
     ng v
     
-    npm init (if package.json is absent)
-    npm install lite-server --save-dev
-    
-    ng new my-app  (if App is not created)
+    ng new health-food-store --style=scss  (if App is not created)
     
     
 #### Start the development server / Run App
 
-    cd my-app
+    cd health-food-store
     
     ng serve --open
    GoTo=>  [localhost:4200](http://localhost:4200/)
-    
-    or
-    
-    npm start
-   GoTo=>  [localhost:3000](http://localhost:3000/)

@@ -4,9 +4,7 @@
   "description": "Web App",
   "main": "index.js",
   "scripts": {
-    "start": "npm run lite",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+
   },
   "repository": {
     "type": "git",
@@ -23,6 +21,6 @@
   },
   "homepage": "https://github.com/WebDevelopUa/AngularFoodStote#readme",
   "devDependencies": {
-    "lite-server": "^2.2.2"
+
   }
 }
