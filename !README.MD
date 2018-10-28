@@ -269,6 +269,54 @@
      </div>  
      
         
+#### Refactoring the Code & add select item action
+
+   Create a new file named *dishes.ts* in the *shared* folder to now export the JavaScript object array of dishes:
+    
+    export const DISHES  = [
+      {
+        name: 'Apple',
+        image: '/assets/images/apple.png',
+        category: 'fruits',
+        label: 'Hot',
+        price: '0.99',
+        description: 'Healthy Green Apples'
+      },
+    
+    ];
+       
+        
+   Open *menu.component.ts* file and update its content, first by deleting the *dishes* constant and then make the following changes:
+   
+    import { Component, OnInit } from '@angular/core';
+    import { Dish } from '../shared/dish';
+    import { DISHES } from '../shared/dishes';
+    
+    . . .
+    
+    export class MenuComponent implements OnInit {
+    
+      dishes: Dish[] = DISHES;
+    
+      selectedDish: Dish;
+    
+    . . .
+    
+      onSelect(dish: Dish) {
+        this.selectedDish = dish;
+      }
+    
+    }       
+               
+   Update the *menu.component.html* file as follows:
+   
+    <md-grid-tile *ngFor="let dish of dishes" (click) = "onSelect(dish)">
+            
+              
+                      
+        
+        
+        
 #### *.gitignore* file
 
     -
