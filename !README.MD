@@ -394,7 +394,73 @@
     
     
 
+#### Install Angular Material, Angular Component Dev Kit (CDK) & Angular Animations - https://material.angular.io/guide/getting-started
+
+    npm install --save @angular/material @angular/cdk @angular/animations
+    
+    
+   Configure animations:
+   
+    import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+    
+    @NgModule({
+      ...
+      imports: [BrowserAnimationsModule],
+      ...
+    })
+    export class PizzaPartyAppModule { }
             
+            
+   Import the component modules (*Angular Material modules after Angular's BrowserModule*):
+   
+    import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+    
+    @NgModule({
+      ...
+      imports: [MatButtonModule, MatCheckboxModule],
+      ...
+    })
+    export class PizzaPartyAppModule { }
+            
+                    
+   Include a theme (https://material.angular.io/guide/theming)
+   
+   (If you're using the Angular CLI, you can add this to your *styles.css*):
+   
+    @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+            
+           
+   (If you are not using the Angular CLI, you can add this to your *index.html*):
+   
+    <link rel="stylesheet" type="text/css" href="theme.css">
+            
+                   
+   Gesture Support (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS for gestures):
+   
+    npm install --save hammerjs
+            
+                           
+   After installing, import it on your app's entry point (e.g. *src/main.ts*).
+   
+    import 'hammerjs';
+            
+                                   
+   Add Material Icons (https://material.io/tools/icons/), load the icon font in your *index.html*:
+   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+   Install & Using icons (https://google.github.io/material-design-icons/):
+            
+    npm install material-design-icons
+    
+   
+   Update the template as follows:
+       
+    <i class="material-icons">face</i>
+            
+        
+        
         
         
 #### *.gitignore* file
