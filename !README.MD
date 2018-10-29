@@ -51,16 +51,11 @@
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
     
-   src/app/app.module.ts
-    
-    . . . 
+   *src/app/app.module.ts*
     
     import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     import { MatToolbarModule } from '@angular/material/toolbar'; 
     import { FlexLayoutModule } from '@angular/flex-layout';
-    
-    . . . 
-    
     import 'hammerjs';
     
     @NgModule({
@@ -82,7 +77,6 @@
       
     }) 
     
-    . . . 
    
    Open *app.component.html*
     
@@ -118,9 +112,7 @@
     
    Update *menu.component.ts* as follows to add in the data for four menu items:
     
-    . . .
     import { Dish } from '../shared/dish';
-    . . .
     
     export class MenuComponent implements OnInit {
     
@@ -157,8 +149,6 @@
     
    Update *app.module.ts* as follows:
    
-    . . .
-    
     import { MatListModule } from '@angular/material/list';
     
     . . .
@@ -201,8 +191,6 @@
     
    Open *app.module.ts* and update it as follows:
    
-    . . .
-    
     import { MatGridListModule } from '@angular/material/grid-list';
     import { MatCardModule } from '@angular/material/card';
     import { MatButtonModule } from '@angular/material/button';
