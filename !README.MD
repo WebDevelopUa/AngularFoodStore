@@ -364,8 +364,35 @@
     
     }
     
- 
- 
+#### Using Font Awesome Icons
+                      
+   Use NPM to fetch Font Awesome to the project by typing the following at the prompt:
+    
+    npm install font-awesome@4.7.0 --save
+    
+                      
+   Add a new file named *_variables.scss* in the *src* folder and add the following to it:
+    
+    cd src && echo $fa-font-path : '../node_modules/font-awesome/fonts'; > _variables.scss
+    $fa-font-path : '../node_modules/font-awesome/fonts';
+    
+                      
+   Open the *styles.scss* file and update it as follows:
+    
+    @import 'variables';
+    @import '../node_modules/font-awesome/scss/font-awesome';
+    
+                      
+   Restart your server by stopping and restarting the:
+   
+    ng serve --open
+    
+                          
+   Update the template as follows:
+   
+      <a href="/"><span class="fa fa-home fa-lg"></span> Home</a>
+    
+    
 
             
         
