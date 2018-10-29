@@ -316,6 +316,71 @@
                       
         
         
+#### Adding a Service
+
+   Create a folder named *services* in the *src/app* folder:
+    
+    cd src/app && mkdir services
+
+
+   Add a service to your application using Angular CLI:
+    
+    ng generate service services/dish
+
+      
+   Open *dish.service.ts* and update its contents as shown below:
+    
+    import { Dish } from '../shared/dish';
+    import { DISHES } from '../shared/dishes';
+    
+    . . .
+    
+      getDishes(): Dish[] {
+        return DISHES;
+      }
+    . . .
+
+            
+              
+   Add the **service** to the *app.module.ts* file as follows:
+    
+    import { DishService } from './services/dish.service';
+    
+    @NgModule({
+    . . .
+    
+      providers: [DishService],
+    
+    . . .
+ 
+
+                      
+   Update *menu.component.ts* file to make **Use of the Service** as follows:
+    
+    import { DishService } from '../services/dish.service';
+    
+    . . .
+    
+    export class MenuComponent implements OnInit {
+    
+      dishes: Dish[];
+      selectedDish: Dish;
+    
+      constructor(private dishService: DishService) { }
+      
+      ngOnInit() {
+        this.dishes = this.dishService.getDishes();
+      }
+    
+    . . .
+    
+    }
+    
+ 
+ 
+
+            
+        
         
 #### *.gitignore* file
 

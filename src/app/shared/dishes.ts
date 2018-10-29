@@ -5,7 +5,6 @@ export const DISHES  = [
     category: 'fruits',
     label: 'Hot',
     price: '0.99',
-    // tslint:disable-next-line:max-line-length
     description: 'Healthy Green Apples'
   },
   {

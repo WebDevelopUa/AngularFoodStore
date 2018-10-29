@@ -13,9 +13,12 @@ import {MenuComponent} from './menu/menu.component';
 import {MatListModule} from '@angular/material/list';
 
 //  Grid list Angular material component
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+
+// import SERVICE & add it to providers: [DishService],
+import {DishService} from "./services/dish.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +36,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [DishService],
   bootstrap: [AppComponent]
 })
 

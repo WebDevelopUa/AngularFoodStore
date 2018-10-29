@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Dish} from '../shared/dish';
-import {DISHES} from "../shared/dishes";
+
+// bad way of fetching data:
+// import {DISHES} from "../shared/dishes";
+// use Service instead:
+import { DishService } from '../services/dish.service';
 
 
 @Component({
@@ -13,18 +17,20 @@ import {DISHES} from "../shared/dishes";
 export class MenuComponent implements OnInit {
 
   // dishes = DISHES;
-  // dishes: Dish[];
-  dishes: Dish[] = DISHES;
+  dishes: Dish[];
+  // dishes: Dish[] = DISHES;
 
   // selectedDish = DISHES[0];
   // selectedDish: Dish = DISHES[6];
   selectedDish: Dish;
 
 
-  constructor() {
+  constructor(private dishService: DishService) {
   }
 
+  // fetch Data from Service using .getDishes() method from dish.service.ts
   ngOnInit() {
+    this.dishes = this.dishService.getDishes();
   }
 
   onSelect(dish: Dish) {
