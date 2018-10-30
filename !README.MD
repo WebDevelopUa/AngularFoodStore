@@ -843,6 +843,51 @@
      
     
     
+   Update the **Contact** component *contact.component.html* file:
+    
+    <div class="container"
+         fxLayout="column"
+         fxLayoutGap="10px">
+    
+      <div fxFlex>
+        <div>
+          <h3 class="text-center">Contact Us</h3>
+          <hr>
+        </div>
+      </div>
+    
+      <div fxFlex class="margin-40">
+        <h3>Location Information</h3>
+        <div fxLayout="column" fxLayout.gt-sm="row">
+          <div fxFlex="50" fxFlexOffset="20px">
+            <h4>Our Address</h4>
+            <address>
+              5022, 445 Mount Eden Road,<br> Mount Eden, Auckland<br> New Zealand<br>
+              <i class="fa fa-phone"></i>: +64 9 977 0102<br>
+              <i class="fa fa-fax"></i>: 0800 501 501<br>
+              <i class="fa fa-envelope"></i>:
+              <a href="mailto:hfs@food.net">hfs@food.net</a>
+            </address>
+            <p></p>
+            <div>
+              <a mat-raised-button href="tel:+6499770102"><i class="fa fa-phone"></i> Call</a>
+              <a mat-raised-button><i class="fa fa-skype"></i> Skype</a>
+              <a mat-raised-button href="mailto:hfs@food.net"><i class="fa fa-envelope-o"></i> Email</a>
+            </div>
+          </div>
+    
+          <div fxFlex="40">
+            <h4>Map of our Location</h4>
+          </div>
+    
+        </div>
+    
+      </div>
+    </div>
+
+     
+    
+    
     
        
    
