@@ -1,0 +1,41 @@
+$lt-gray: #ddd;
+$lts-gray: lightslategrey;
+$green: #7faa61;
+$lt-green: #b6f58c;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+  //margin: 0px auto;
+  margin: 20px;
+  padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+  @include zero-margin(70px, 30px);
+  background: $lts-gray;
+  color: floralwhite;
+  min-height: 150px;
+  text-align: justify;
+}
+
+
+.toolbar {
+  display: flex;
+  margin: auto;
+  border-radius: 40px;
+}
+
+.brand {
+  margin: 10px 20px;
+}
+
+.brand:active {
+  color: lightslategrey;
+}
+
+.welcome {
+  color: $lt-green;
+  text-align: center;
+}
