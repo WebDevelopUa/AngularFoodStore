@@ -7,14 +7,14 @@ export const DISHES  = [
     price: '0.99',
     description: 'Healthy Green Apples'
   },
-  {
-    name: 'Avocado',
-    image: '/assets/images/avocado.png',
-    category: 'fruits',
-    label: '',
-    price: '1.99',
-    description: 'Healthy Tropical Avocado'
-  },
+  // {
+  //   name: 'Avocado',
+  //   image: '/assets/images/avocado.png',
+  //   category: 'fruits',
+  //   label: '',
+  //   price: '1.99',
+  //   description: 'Healthy Tropical Avocado'
+  // },
   {
     name: 'Chinese Cabbage',
     image: '/assets/images/cabbage.png',
@@ -33,14 +33,14 @@ export const DISHES  = [
     description: 'A grape is a fruit, botanically a berry, of the deciduous woody vines of the flowering plant genus Vitis'
   },
 
-  {
-    name: 'Coconut',
-    image: '/assets/images/coconut.png',
-    category: 'fruits',
-    label: '',
-    price: '2.99',
-    description: 'Delicious seed, or the fruit, which botanically is a drupe, not a nut'
-  },
+  // {
+  //   name: 'Coconut',
+  //   image: '/assets/images/coconut.png',
+  //   category: 'fruits',
+  //   label: '',
+  //   price: '2.99',
+  //   description: 'Delicious seed, or the fruit, which botanically is a drupe, not a nut'
+  // },
 
   {
     name: 'Kiwi',
