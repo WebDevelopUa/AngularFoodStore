@@ -764,7 +764,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     <app-menu></app-menu>
     <app-footer></app-footer>
             
-          
+        
+#### Create **About** component 
+
+    ng g component about
+    
+                 
                             
            
         

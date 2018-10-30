@@ -728,6 +728,16 @@
     <app-header></app-header>
     <app-menu></app-menu>
     <app-footer></app-footer>
+   
+   
+        
+        
+#### Create **About** component 
+
+    ng g component about
+    
+       
+   
             
         
 #### *.gitignore* file
