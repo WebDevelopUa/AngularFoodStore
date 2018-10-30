@@ -14,6 +14,7 @@ export const DISHES = [
   //   category: 'fruits',
   //   label: '',
   //   price: '1.99',
+  //   featured: false,
   //   description: 'Healthy Tropical Avocado'
   // },
   {
@@ -42,6 +43,7 @@ export const DISHES = [
   //   category: 'fruits',
   //   label: '',
   //   price: '2.99',
+  //   featured: false,
   //   description: 'Delicious seed, or the fruit, which botanically is a drupe, not a nut'
   // },
 
@@ -55,15 +57,15 @@ export const DISHES = [
     description: 'Delicious eco friendly fruit for your family'
   },
 
-  {
-    name: 'Lettuce',
-    image: '/assets/images/lettuce.png',
-    category: 'vegetables',
-    label: '',
-    price: '0.69',
-    featured: false,
-    description: 'Lettuce is most often used for salads, although it is also seen in other kinds of food, such as soups, sandwiches and wraps; it can also be grilled'
-  },
+  // {
+  //   name: 'Lettuce',
+  //   image: '/assets/images/lettuce.png',
+  //   category: 'vegetables',
+  //   label: '',
+  //   price: '0.69',
+  //   featured: false,
+  //   description: 'Lettuce is most often used for salads, although it is also seen in other kinds of food, such as soups, sandwiches and wraps; it can also be grilled'
+  // },
 
   {
     name: 'Lemon',
@@ -96,15 +98,15 @@ export const DISHES = [
   },
 
 
-  {
-    name: 'Onion',
-    image: '/assets/images/onion.png',
-    category: 'vegetables',
-    label: '',
-    price: '2.99',
-    featured: false,
-    description: 'Bulb onion or common onion, is a vegetable that is the most widely cultivated species of the genus Allium'
-  },
+  // {
+  //   name: 'Onion',
+  //   image: '/assets/images/onion.png',
+  //   category: 'vegetables',
+  //   label: '',
+  //   price: '2.99',
+  //   featured: false,
+  //   description: 'Bulb onion or common onion, is a vegetable that is the most widely cultivated species of the genus Allium'
+  // },
   {
     name: 'Orange',
     image: '/assets/images/orange.png',
@@ -123,15 +125,15 @@ export const DISHES = [
     featured: false,
     description: 'Tropical plant with an edible multiple fruit consisting of coalesced berries'
   },
-  {
-    name: 'Potato',
-    image: '/assets/images/potato.png',
-    category: 'vegetables',
-    label: '',
-    price: '0.99',
-    featured: false,
-    description: 'The potato is a starchy, tuberous crop from the perennial nightshade '
-  },
+  // {
+  //   name: 'Potato',
+  //   image: '/assets/images/potato.png',
+  //   category: 'vegetables',
+  //   label: '',
+  //   price: '0.99',
+  //   featured: false,
+  //   description: 'The potato is a starchy, tuberous crop from the perennial nightshade '
+  // },
   {
     name: 'Raspberry',
     image: '/assets/images/raspberry.png',

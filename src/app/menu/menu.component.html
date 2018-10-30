@@ -2,7 +2,7 @@
      fxLayout="column"
      fxLayoutGap="10px">
   <div fxFlex>
-    <mat-grid-list cols="3" rowHeight="600px">
+    <mat-grid-list cols="4" rowHeight="400px">
       <!--<mat-grid-tile *ngFor="let dish of dishes">-->
       <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
         <img height="600px" src={{dish.image}} alt={{dish.name}}>
@@ -27,7 +27,7 @@
         </mat-card-title>
       </mat-card-header>
       <!--<img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>-->
-      <img width="400" height="400"  src={{selectedDish.image}} alt={{selectedDish.name}}>
+      <img height="auto" width="50%"   src={{selectedDish.image}} alt={{selectedDish.name}}>
       <mat-card-content>
         <p>{{selectedDish.description}}
         </p>
