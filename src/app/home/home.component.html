@@ -1,4 +1,3 @@
-
 <div class="container jumbotron"
      fxLayout="row"
      fxLayout.sm="column"
@@ -9,7 +8,7 @@
      fxLayoutGap="10px">
 
   <div fxFlex fxFlex.gt-sm="50%">
-    <h1  title="Health Food Store">Welcome to HFS! <i class="material-icons md-48">face</i></h1>
+    <h1 title="Health Food Store">Welcome to HFS! <i class="material-icons md-48">face</i></h1>
     <p>
       The term health food has been used since the 1920s to refer to specific foods claimed to be especially beneficial
       to health, although the term has no official definition. Some terms that are associated with health food are
@@ -28,5 +27,28 @@
   </div>
 
   <div fxFlex></div>
+
+</div>
+
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+
+  <mat-card *ngIf="dish" fxFlex>
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>
+        <h3>{{dish.name | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img height="auto" width="100%"  src={{dish.image}} alt={{dish.name}}>
+    <mat-card-content>
+      <p>{{dish.description}}
+      </p>
+    </mat-card-content>
+  </mat-card>
 
 </div>

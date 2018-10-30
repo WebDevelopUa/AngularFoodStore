@@ -843,7 +843,7 @@
      
     
     
-   Update the **Contact** component *contact.component.html* file:
+####  Update the **Contact** component *contact.component.html* file:
     
     <div class="container"
          fxLayout="column"
@@ -887,6 +887,140 @@
 
      
     
+####  Update the **About** component *about.component.html* file:
+    
+    <div class="container"
+         fxLayout="column"
+         fxLayoutGap="10px">
+    
+      <div fxFlex>
+        <div>
+          <h3 class="text-center">About Us</h3>
+          <hr>
+        </div>
+      </div>
+    
+      <div class="margin-40"
+           fxLayout="row"
+           fxLayout.sm="column"
+           fxLayout.xs="column"
+           fxLayoutAlign.xs="start center"
+           fxLayoutAlign.sm="start center"
+           fxLayoutAlign.gt-sm="center center"
+           fxLayoutGap="10px">
+    
+    
+        <div fxFlex fxFlex.gt-sm="50%">
+          <h1 class="welcome" title="Health Food Store">Welcome to HFS! <i class="material-icons md-48">face</i></h1>
+          <p class="text-justify">
+            The term health food has been used since the 1920s to refer to specific foods claimed to be especially beneficial
+            to health, although the term has no official definition. Some terms that are associated with health food are
+            macrobiotics, natural foods, organic foods and whole foods. Macrobiotics is a diet focusing primarily on whole
+            cereals. Whole cereals, along with other whole foods, are foods that are minimally processed. Whole cereals have
+            their fiber, germ and hull intact and are considered more nutritious. Natural foods are simply foods that contain
+            no artificial ingredients. Organic foods are foods that are grown without the use of conventional and artificial
+            pesticides and must meet certain organic standards.
+          </p>
+        </div>
+    
+        <span class="fill-space"></span>
+    
+        <div fxFlex fxFlex.gt-sm="40%">
+          <img height="auto" width="100%" alt="Logo" src="/assets/images/logo.svg">
+        </div>
+    
+      </div>
+    </div>
+
+                 
+####  Update the **Home** component *home.component.html* file:
+    
+   Update *dish.ts* file as follows:
+   
+    export class Dish {
+        id: number;
+        name: string;
+        image: string;
+        category: string;
+        label: string;
+        price: string;
+        featured: boolean;
+        description: string;
+    }
+    
+    
+   Update the *DISHES* constant in *dishes.ts* to add an id to each element, and also add a Featured property to each dish as follows:
+
+    [
+        {
+            id: 0,
+            name: 'Uthappizza',
+            . . .
+            featured: true,
+            
+            . . .
+        },
+                                       
+     
+        
+   Update the dish **Service** in *dish.service.ts* to return a *Featured dish* as follows:
+
+      getDish(id: number): Dish {
+        return DISHES.filter((dish) => (dish.id === id))[0];
+      }
+    
+      getFeaturedDish(): Dish {
+        return DISHES.filter((dish) => dish.featured)[0];
+      }
+                                       
+          
+        
+   Update the *home.component.html* file as follows to add cards to show the Featured dish in the Home page:
+
+    <div class="container"
+         fxLayout="row"
+         fxLayout.sm="column"
+         fxLayout.xs="column"
+         fxLayoutAlign.gt-md="space-around center"
+         fxLayoutGap="10px">
+    
+        <mat-card *ngIf="dish" fxFlex>
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+              <h3>{{dish.name | uppercase}}</h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+          <mat-card-content>
+            <p>{{dish.description}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+    </div>
+                                       
+     
+    
+            
+   Update the *home.component.ts* file to fetch and provide the *Featured dish* for the view:
+
+    import { Dish } from '../shared/dish';
+    import { DishService } from '../services/dish.service';
+    
+    . . .
+    
+    export class HomeComponent implements OnInit {
+    
+      dish: Dish;
+    
+      constructor(private dishservice: DishService) { }
+    
+      ngOnInit() {
+        this.dish = this.dishservice.getFeaturedDish();
+      }
+
+                                       
+     
     
     
        

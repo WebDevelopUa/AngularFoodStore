@@ -875,7 +875,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
      }
      
     
-   Update the **Contact** component *contact.component.html* file:
+####  Update the **Contact** component *contact.component.html* file:
     
     <div class="container"
          fxLayout="column"
@@ -917,9 +917,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       </div>
     </div>
 
+     
     
-    
-   Update the **About** component *about.component.html* file:
+####  Update the **About** component *about.component.html* file:
     
     <div class="container"
          fxLayout="column"
@@ -964,8 +964,96 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       </div>
     </div>
 
+                 
+####  Update the **Home** component *home.component.html* file:
+    
+   Update *dish.ts* file as follows:
+   
+    export class Dish {
+        id: number;
+        name: string;
+        image: string;
+        category: string;
+        label: string;
+        price: string;
+        featured: boolean;
+        description: string;
+    }
+    
+    
+   Update the *DISHES* constant in *dishes.ts* to add an id to each element, and also add a Featured property to each dish as follows:
+
+    [
+        {
+            id: 0,
+            name: 'Uthappizza',
+            . . .
+            featured: true,
+            
+            . . .
+        },
                                        
-           
+     
+        
+   Update the dish **Service** in *dish.service.ts* to return a *Featured dish* as follows:
+
+      getDish(id: number): Dish {
+        return DISHES.filter((dish) => (dish.id === id))[0];
+      }
+    
+      getFeaturedDish(): Dish {
+        return DISHES.filter((dish) => dish.featured)[0];
+      }
+                                       
+          
+        
+   Update the *home.component.html* file as follows to add cards to show the Featured dish in the Home page:
+
+    <div class="container"
+         fxLayout="row"
+         fxLayout.sm="column"
+         fxLayout.xs="column"
+         fxLayoutAlign.gt-md="space-around center"
+         fxLayoutGap="10px">
+    
+        <mat-card *ngIf="dish" fxFlex>
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+              <h3>{{dish.name | uppercase}}</h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+          <mat-card-content>
+            <p>{{dish.description}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+    </div>
+                                       
+     
+    
+            
+   Update the *home.component.ts* file to fetch and provide the *Featured dish* for the view:
+
+    import { Dish } from '../shared/dish';
+    import { DishService } from '../services/dish.service';
+    
+    . . .
+    
+    export class HomeComponent implements OnInit {
+    
+      dish: Dish;
+    
+      constructor(private dishservice: DishService) { }
+    
+      ngOnInit() {
+        this.dish = this.dishservice.getFeaturedDish();
+      }
+
+                                       
+     
+        
         
 #### *.gitignore* file
 
