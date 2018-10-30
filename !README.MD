@@ -740,6 +740,11 @@
 #### Create **Home** component 
 
     ng g component home
+                  
+                  
+#### Create **Contact** component 
+
+    ng g component contact
     
        
    
