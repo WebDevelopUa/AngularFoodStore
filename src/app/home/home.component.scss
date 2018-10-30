@@ -1,0 +1,24 @@
+$white: floralwhite;
+$lt-gray: #ddd;
+$lts-gray: lightslategrey;
+$green: #7faa61;
+$lt-green: #b6f58c;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+  //margin: 0px auto;
+  margin: 20px;
+  padding: $pad-up-down $pad-left-right;
+}
+
+.welcome {
+  color: $lt-green;
+  text-align: center;
+}
+
+.jumbotron {
+  @include zero-margin(70px, 30px);
+  background: $lts-gray;
+  color: $white;
+  min-height: 150px;
+  text-align: justify;
+}
