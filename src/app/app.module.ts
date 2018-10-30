@@ -24,6 +24,7 @@ import {DishService} from "./services/dish.service";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AboutComponent } from './about/about.component';
     MenuComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

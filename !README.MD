@@ -736,6 +736,11 @@
 
     ng g component about
     
+               
+#### Create **Home** component 
+
+    ng g component home
+    
        
    
             

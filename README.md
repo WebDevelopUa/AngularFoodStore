@@ -769,7 +769,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
     ng g component about
     
-                 
+
+               
+#### Create **Home** component 
+
+    ng g component home
+                    
                             
            
         
