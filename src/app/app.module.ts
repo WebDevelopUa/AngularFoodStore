@@ -22,12 +22,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 // import SERVICE & add it to providers: [DishService],
 import {DishService} from "./services/dish.service";
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

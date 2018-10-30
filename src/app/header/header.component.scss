@@ -1,3 +1,4 @@
+$white: floralwhite;
 $lt-gray: #ddd;
 $lts-gray: lightslategrey;
 $green: #7faa61;
@@ -15,7 +16,7 @@ $background-pale: #D1C4E9;
 .jumbotron {
   @include zero-margin(70px, 30px);
   background: $lts-gray;
-  color: floralwhite;
+  color: $white;
   min-height: 150px;
   text-align: justify;
 }

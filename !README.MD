@@ -205,7 +205,6 @@
         . . .
       ],
     
-    . . .
     
         
         
@@ -213,8 +212,6 @@
 
    Update the *menu.component.ts* file as follows to move the details of the dishes into a constant
     
-     . . .
-     
      const DISHES: Dish[] = [
      . . .
      
@@ -235,7 +232,6 @@
      
    Update the *menu.component.html* template to display the details of a selected dish using the Material Card component as follows:
      
-   . . .
    
      <div fxFlex *ngIf="selectedDish">
        <mat-card>
@@ -388,7 +384,7 @@
     ng serve --open
     
                           
-   Update the template as follows:
+   Update the Template as follows:
    
       <a href="/"><span class="fa fa-home fa-lg"></span> Home</a>
     
@@ -455,7 +451,7 @@
     npm install material-design-icons
     
    
-   Update the template as follows:
+   Update the Template as follows:
        
     <i class="material-icons">face</i>
             
@@ -468,58 +464,103 @@
     ng generate component header
     
     
-   Update the Header's template *header.component.html* as follows:
+   Update the **Header**'s template *header.component.html* as follows:
     
-    <mat-toolbar color="primary">
-      <span><img src="/assets/images/logo.png" height=30 width=41></span>
-      <a mat-button><span class="fa fa-home fa-lg"></span> Home</a>
-      <a mat-button><span class="fa fa-info fa-lg"></span> About</a>
-      <a mat-button><span class="fa fa-list fa-lg"></span> Menu</a>
-      <a mat-button><span class="fa fa-address-card fa-lg"></span> Contact</a>
-    </mat-toolbar>
-    
-    <div class="container jumbotron"
-        fxLayout="row"
-        fxLayout.sm="column" 
-        fxLayout.xs="column" 
-        fxLayoutAlign.xs="start center"
-        fxLayoutAlign.sm="start center" 
-        fxLayoutAlign.gt-sm="center center" 
-        fxLayoutGap="10px">
-    
-      <div fxFlex fxFlex.gt-sm="50%">
-        <h1>Ristorante Con Fusion</h1>
-        <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations
-          will tickle your culinary senses!</p>
-      </div>
-      <div fxFlex fxFlex.gt-sm="20%">
-        <img src="/assets/images/logo.png" alt="Logo">
-      </div>
-      <div fxFlex></div>
-    </div>
+     <mat-toolbar>
+       <span title="Health Food Store"><img src="/assets/images/logo.svg" height=30 width=auto></span>
+     
+       <span class="fill-space"></span>
+     
+       <a mat-button><span class="fa fa-home fa-lg"></span> Home</a>
+       <a mat-button><span class="fa fa-info fa-lg"></span> About</a>
+       <a mat-button><span class="fa fa-list fa-lg"></span> Menu</a>
+       <a mat-button><span class="fa fa-address-card fa-lg"></span> Contact</a>
+     
+     </mat-toolbar>
+     
+     <div class="container jumbotron"
+          fxLayout="row"
+          fxLayout.sm="column"
+          fxLayout.xs="column"
+          fxLayoutAlign.xs="start center"
+          fxLayoutAlign.sm="start center"
+          fxLayoutAlign.gt-sm="center center"
+          fxLayoutGap="10px">
+     
+       <div fxFlex fxFlex.gt-sm="50%">
+         <h1 class="welcome" title="Health Food Store">Welcome to HFS! <i class="material-icons md-48">face</i></h1>
+         <p>
+           The term health food has been used since the 1920s to refer to specific foods claimed to be especially beneficial
+           to health, although the term has no official definition. Some terms that are associated with health food are
+           macrobiotics, natural foods, organic foods and whole foods. Macrobiotics is a diet focusing primarily on whole
+           cereals. Whole cereals, along with other whole foods, are foods that are minimally processed. Whole cereals have
+           their fiber, germ and hull intact and are considered more nutritious. Natural foods are simply foods that contain
+           no artificial ingredients. Organic foods are foods that are grown without the use of conventional and artificial
+           pesticides and must meet certain organic standards.
+         </p>
+       </div>
+     
+       <span class="fill-space"></span>
+     
+       <div fxFlex fxFlex.gt-sm="40%">
+         <img height="auto" width="100%" alt="Logo" src="/assets/images/logo.svg">
+       </div>
+     
+       <div fxFlex></div>
+     
+     </div>
+     
             
             
-   Update the header's style *header.component.scss* file as follows:
+   Update the **Header**'s style *header.component.scss* file as follows:
     
-    $lt-gray: #ddd;
-    $background-dark: #512DA8;
-    $background-light: #9575CD;
-    $background-pale: #D1C4E9;
-    
-    @mixin zero-margin($pad-up-down, $pad-left-right) {
-        margin: 0px auto;
-        padding: $pad-up-down $pad-left-right;
-    }
-    
-    .jumbotron {
-        @include zero-margin(70px,30px);
-        background: $background-light ;
-        color:floralwhite;
-        min-height: 150px;
-    }
+     $white: floralwhite;
+     $lt-gray: #ddd;
+     $lts-gray: lightslategrey;
+     $green: #7faa61;
+     $lt-green: #b6f58c;
+     $background-dark: #512DA8;
+     $background-light: #9575CD;
+     $background-pale: #D1C4E9;
+     
+     @mixin zero-margin($pad-up-down, $pad-left-right) {
+       //margin: 0px auto;
+       margin: 20px;
+       padding: $pad-up-down $pad-left-right;
+     }
+     
+     .jumbotron {
+       @include zero-margin(70px, 30px);
+       background: $lts-gray;
+       color: $white;
+       min-height: 150px;
+       text-align: justify;
+     }
+     
+     
+     .toolbar {
+       display: flex;
+       margin: auto;
+       border-radius: 40px;
+     }
+     
+     .brand {
+       margin: 10px 20px;
+     }
+     
+     .brand:active {
+       color: lightslategrey;
+     }
+     
+     .welcome {
+       color: $lt-green;
+       text-align: center;
+     }
+
+
         
                     
-   Update the project's style file *styles.scss* with the following:
+   Update the **Project**'s style file *styles.scss* with the following:
     
     $lt-gray: #ddd;
     $background-dark: #512DA8;
@@ -559,19 +600,135 @@
     
     
                         
-   Update the *app.component.html* file to include the header and footer as follows (https://material.angular.io/components/toolbar/overview):
+   Update the *app.component.html* file to include the **Header** as follows (https://material.angular.io/components/toolbar/overview):
     
     <app-header></app-header>
     <app-menu></app-menu>
     
     
+        
+        
+#### Create **Footer** component 
+
+    ng generate component footer
     
     
+   Update the **Footer**'s template *footer.component.html* as follows:
+    
+     <div class="container footer"
+          fxLayout="row wrap"
+          fxLayout.lt-md="column"
+          fxLayoutAlign="center center"
+          fxLayoutGap="10px">
+     
+       <div fxFlex="100" fxFlex.gt-sm="50">
+         <div fxLayout="row">
+           <div fxFlex="40" fxFlexOffset="20px">
+             <h4>Links</h4>
+             <mat-list>
+               <mat-list-item><a mat-button>Home</a></mat-list-item>
+               <mat-list-item><a mat-button>About</a></mat-list-item>
+               <mat-list-item><a mat-button>Menu</a></mat-list-item>
+               <mat-list-item><a mat-button>Contact</a></mat-list-item>
+             </mat-list>
+           </div>
+           <div fxFlex="55">
+             <h4>Our Address</h4>
+             <address style="text-size: 80%">
+               5022, 445 Mount Eden Road,<br>  Mount Eden, Auckland<br> New Zealand<br>
+               <i class="fa fa-phone"></i>: +64 9 977 0102<br>
+               <i class="fa fa-fax"></i>: 0800 501 501<br>
+               <i class="fa fa-envelope"></i>:
+               <a href="mailto:hfs@food.net">hfs@food.net</a>
+             </address>
+           </div>
+         </div>
+       </div>
+       <div fxFlex="100" fxFlex.gt-sm="45">
+         <div style="text-align:center">
+           <a mat-icon-button class="btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+           <a mat-icon-button class="btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook fa-lg"></i></a>
+           <a mat-icon-button class="btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+           <a mat-icon-button class="btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+           <a mat-icon-button class="btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+           <a mat-icon-button class="btn-mail" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+         </div>
+       </div>
+       <div>
+         <p>© Copyright 2018 HFS</p>
+       </div>
+     </div>
+
+            
+              
+   Update the **Footer**'s style *footer.component.scss* file as follows:
+    
+     $white: floralwhite;
+     $lt-gray: #ddd;
+     $lts-gray: lightslategrey;
+     $green: #7faa61;
+     $lt-green: #b6f58c;
+     $background-dark: #512DA8;
+     $background-light: #9575CD;
+     $background-pale: #D1C4E9;
+     
+     @mixin zero-margin($pad-up-down, $pad-left-right) {
+       margin: 0px auto;
+       padding: $pad-up-down $pad-left-right;
+     }
+     
+     .footer {
+       border-radius: unset;
+       color: $white;
+       //background-color: $background-pale;
+       background-color: $lts-gray;
+       @include zero-margin(20px, 0px);
+     }
+     
+     .footer a {
+       color: $white;
+     }
+     
+     .btn-facebook {
+       color: #fff !important;
+       background-color: #3b5998 !important;
+     }
+     
+     .btn-google-plus {
+       color: #fff !important;
+       background-color: #dd4b39 !important;
+     }
+     
+     .btn-youtube {
+       color: #fff !important;
+       background-color: #ff4b39 !important;
+     }
+     
+     .btn-linkedin {
+       color: #fff !important;
+       background-color: #007bb6 !important;
+     }
+     
+     .btn-twitter {
+       color: #fff !important;
+       background-color: #55acee !important;
+     }
+     
+     .btn-mail {
+       color: #fff !important;
+       background-color: #512DA8 !important;
+     }
+     
+
         
         
-        
-        
-        
+                        
+   Update the *app.component.html* file to include the **Footer** as follows (https://material.angular.io/components/toolbar/overview):
+    
+    <app-header></app-header>
+    <app-menu></app-menu>
+    <app-footer></app-footer>
+            
         
 #### *.gitignore* file
 
