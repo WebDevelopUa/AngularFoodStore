@@ -1022,8 +1022,153 @@
                                        
      
     
+                 
+####  Add **Promo** component to **Homepage**  *home.component.html* file:
     
+    
+   Create *promotion.ts* file in *shared* folder as follows:
+   
+    export class Promotion {
+      id: number;
+      name: string;
+      image: string;
+      category: string;
+      label: string;
+      price: string;
+      featured: boolean;
+      description: string;
+    }
+
+   
        
+   Create *promotions.ts* file in *shared* folder as follows:
+   
+    export const PROMOTIONS = [
+      
+      {
+        id: 2,
+        name: 'Chinese Cabbage',
+        image: '/assets/images/cabbage.png',
+        category: 'vegetables',
+        label: 'New',
+        price: '0.55',
+        featured: true,
+        description: 'Fresh green organic Chinese Cabbage'
+      }
+    
+    ];
+
+   
+           
+   Create promotion **Service**  *promotion.service.ts* to return a *Promotion dish* as follows:
+
+    ng g service services/promotion
+    
+    import {Promotion} from "../shared/promotion";
+    import {PROMOTIONS} from "../shared/promotions";
+       
+           
+   Create promotion **Service**  *promotion.service.ts* to return a *Promotion dish* as follows:
+
+    ng g service services/promotion
+    
+    import {Promotion} from "../shared/promotion";
+    import {PROMOTIONS} from "../shared/promotions";
+    
+    @Injectable({
+      providedIn: 'root'
+    })
+    
+    
+    export class PromotionService {
+    
+      constructor() {
+      }
+    
+      getPromotions(): Promotion[] {
+        return PROMOTIONS;
+      }
+      getPromotion(id: number): Promotion {
+        return PROMOTIONS.filter((promo) => (promo.id === id))[0]
+      }
+    
+      getFeaturedPromotion(): Promotion {
+        return PROMOTIONS.filter((promotion) => (promotion.featured))[0]
+      }
+    
+    }
+
+    
+              
+   Import promotion **Service**  *promotion.service.ts* to AppModule *app.module.ts*:
+
+
+    import {PromotionService} from "./services/promotion.service";
+    
+    @NgModule({
+      declarations: [
+      ],
+      imports: [
+      ],
+      providers: [DishService, PromotionService],
+    })
+
+     
+  Update the *home.component.html* file as follows to add cards to show the *Promo dish* in the Home page:
+
+    <div class="container"
+         fxLayout="row"
+         fxLayout.sm="column"
+         fxLayout.xs="column"
+         fxLayoutAlign.gt-md="space-around center"
+         fxLayoutGap="10px">
+    
+    <mat-card *ngIf="promotion" fxFlex>
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>
+          <h3>{{promotion.name | uppercase}}</h3>
+        </mat-card-title>
+      </mat-card-header>
+      
+      <img mat-card-image src={{promotion.image}} alt={{promotion.name}}>
+      
+      <mat-card-content>
+        <p>{{promotion.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+    
+    </div>
+   
+   
+       
+  Update the *home.component.ts* file to fetch and provide promotion for the view:
+
+    import {Promotion} from "../shared/promotion";
+    import {PromotionService} from "../services/promotion.service";
+    
+    
+    export class HomeComponent implements OnInit {
+      promotion: Promotion;
+    
+      constructor(private promotionservice: PromotionService) {
+      }
+    
+      ngOnInit() {
+        this.promotion = this.promotionservice.getFeaturedPromotion();
+      }
+    
+    }
+
+
+    
+    
+   
+   
+   
+   
+   
    
             
         
@@ -1058,3 +1203,4 @@
 
     
     
+(Deep Space House)[https://youtu.be/GlvCx2jYIEs]

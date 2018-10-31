@@ -1,4 +1,4 @@
-export class Dish {
+export class Promotion {
   id: number;
   name: string;
   image: string;

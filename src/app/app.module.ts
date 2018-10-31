@@ -19,6 +19,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 // import SERVICE & add it to providers: [DishService],
 import {DishService} from "./services/dish.service";
+import {PromotionService} from "./services/promotion.service";
 
 
 // import Routing Module
@@ -31,6 +32,7 @@ import {AboutComponent} from './about/about.component';
 import {HomeComponent} from './home/home.component';
 import {ContactComponent} from './contact/contact.component';
 import {MenuComponent} from './menu/menu.component';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ import {MenuComponent} from './menu/menu.component';
     MatCardModule,
     MatButtonModule
   ],
-  providers: [DishService],
+  providers: [DishService, PromotionService],
   bootstrap: [AppComponent]
 })
 
