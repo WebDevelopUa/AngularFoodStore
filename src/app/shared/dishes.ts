@@ -1,5 +1,6 @@
 export const DISHES = [
   {
+    id: 0,
     name: 'Apple',
     image: '/assets/images/apple.png',
     category: 'fruits',
@@ -9,6 +10,7 @@ export const DISHES = [
     description: 'Healthy Green Apples'
   },
   // {
+  // id: 1,
   //   name: 'Avocado',
   //   image: '/assets/images/avocado.png',
   //   category: 'fruits',
@@ -18,6 +20,7 @@ export const DISHES = [
   //   description: 'Healthy Tropical Avocado'
   // },
   {
+    id: 2,
     name: 'Chinese Cabbage',
     image: '/assets/images/cabbage.png',
     category: 'vegetables',
@@ -28,6 +31,7 @@ export const DISHES = [
   },
 
   {
+    id: 3,
     name: 'Grape',
     image: '/assets/images/grape.png',
     category: 'fruits',
@@ -38,6 +42,7 @@ export const DISHES = [
   },
 
   // {
+  // id: 4,
   //   name: 'Coconut',
   //   image: '/assets/images/coconut.png',
   //   category: 'fruits',
@@ -48,6 +53,7 @@ export const DISHES = [
   // },
 
   {
+    id: 5,
     name: 'Kiwi',
     image: '/assets/images/kiwi.png',
     category: 'fruits',
@@ -58,6 +64,7 @@ export const DISHES = [
   },
 
   // {
+  // id: 6,
   //   name: 'Lettuce',
   //   image: '/assets/images/lettuce.png',
   //   category: 'vegetables',
@@ -68,6 +75,7 @@ export const DISHES = [
   // },
 
   {
+    id: 7,
     name: 'Lemon',
     image: '/assets/images/lemon.png',
     category: 'fruits',
@@ -78,6 +86,7 @@ export const DISHES = [
   },
 
   {
+    id: 8,
     name: 'Lime',
     image: '/assets/images/lime.png',
     category: 'fruits',
@@ -88,6 +97,7 @@ export const DISHES = [
   },
 
   {
+    id: 9,
     name: 'Melon',
     image: '/assets/images/melon.png',
     category: 'fruits',
@@ -99,6 +109,7 @@ export const DISHES = [
 
 
   // {
+  // id: 10,
   //   name: 'Onion',
   //   image: '/assets/images/onion.png',
   //   category: 'vegetables',
@@ -108,6 +119,7 @@ export const DISHES = [
   //   description: 'Bulb onion or common onion, is a vegetable that is the most widely cultivated species of the genus Allium'
   // },
   {
+    id: 11,
     name: 'Orange',
     image: '/assets/images/orange.png',
     category: 'fruits',
@@ -117,6 +129,7 @@ export const DISHES = [
     description: 'Orange (fruit), the fruit of the tree species Citrus sinensis'
   },
   {
+    id: 12,
     name: 'Pineapple',
     image: '/assets/images/pineapple.png',
     category: 'fruits',
@@ -126,6 +139,7 @@ export const DISHES = [
     description: 'Tropical plant with an edible multiple fruit consisting of coalesced berries'
   },
   // {
+  // id: 13,
   //   name: 'Potato',
   //   image: '/assets/images/potato.png',
   //   category: 'vegetables',
@@ -135,6 +149,7 @@ export const DISHES = [
   //   description: 'The potato is a starchy, tuberous crop from the perennial nightshade '
   // },
   {
+    id: 14,
     name: 'Raspberry',
     image: '/assets/images/raspberry.png',
     category: 'berry',
@@ -144,6 +159,7 @@ export const DISHES = [
     description: 'Edible fruit of a multitude of plant species in the genus'
   },
   {
+    id: 15,
     name: 'Strawberry',
     image: '/assets/images/strawberry.png',
     category: 'berry',
@@ -153,6 +169,7 @@ export const DISHES = [
     description: 'The fruit is widely appreciated for its characteristic aroma, bright red color, juicy texture, and sweetness'
   },
   {
+    id: 16,
     name: 'Tomato',
     image: '/assets/images/tomato.png',
     category: 'berry',

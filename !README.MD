@@ -949,7 +949,7 @@
     }
     
     
-   Update the *DISHES* constant in *dishes.ts* to add an id to each element, and also add a Featured property to each dish as follows:
+   Update the *DISHES* constant in *dishes.ts* to add an id to each element, and also add a *Featured property* to each dish as follows:
 
     [
         {
@@ -975,7 +975,7 @@
                                        
           
         
-   Update the *home.component.html* file as follows to add cards to show the Featured dish in the Home page:
+   Update the *home.component.html* file as follows to add cards to show the *Featured dish* in the Home page:
 
     <div class="container"
          fxLayout="row"
