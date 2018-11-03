@@ -1,10 +1,12 @@
 <div class="container"
      fxLayout="column"
      fxLayoutGap="10px">
+
   <div fxFlex>
     <mat-grid-list cols="4" rowHeight="400px">
       <!--<mat-grid-tile *ngFor="let dish of dishes">-->
-      <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
+      <!--<mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">-->
+        <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
         <img height="600px" src={{dish.image}} alt={{dish.name}}>
         <mat-grid-tile-footer>
           <h1 matLine>{{dish.name | uppercase}}</h1>
@@ -14,36 +16,38 @@
   </div>
 </div>
 
+<!-- SELECTED DISH RENDER (moved to dishdetail)-->
+<!--<div class="container text-center"-->
+     <!--fxLayout="column"-->
+     <!--fxLayoutGap="10px">-->
 
-<div class="container text-center"
-     fxLayout="column"
-     fxLayoutGap="10px">
+  <!--<div fxFlex *ngIf="selectedDish">-->
+    <!--<mat-card>-->
+      <!--<mat-card-header  class="center">-->
+        <!--<mat-card-title>-->
+          <!--<h3>{{selectedDish.name | uppercase}}</h3>-->
+        <!--</mat-card-title>-->
+      <!--</mat-card-header>-->
+      <!--&lt;!&ndash;<img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>&ndash;&gt;-->
+      <!--<img height="auto" width="50%"   src={{selectedDish.image}} alt={{selectedDish.name}}>-->
+      <!--<mat-card-content>-->
+        <!--<p>{{selectedDish.description}}-->
+        <!--</p>-->
+      <!--</mat-card-content>-->
+      <!--<mat-card-actions>-->
+        <!--<button mat-button>LIKE</button>-->
+        <!--<button mat-button>SHARE</button>-->
+      <!--</mat-card-actions>-->
+    <!--</mat-card>-->
+  <!--</div>-->
 
-  <div fxFlex *ngIf="selectedDish">
-    <mat-card>
-      <mat-card-header  class="center">
-        <mat-card-title>
-          <h3>{{selectedDish.name | uppercase}}</h3>
-        </mat-card-title>
-      </mat-card-header>
-      <!--<img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>-->
-      <img height="auto" width="50%"   src={{selectedDish.image}} alt={{selectedDish.name}}>
-      <mat-card-content>
-        <p>{{selectedDish.description}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+<!--</div>-->
 
-</div>
-
+<!-- List of Products (hidden)-->
 <div class="container"
      fxLayout="column"
-     fxLayoutGap="10px">
+     fxLayoutGap="10px"
+     *ngIf="hideElement">
 
   <mat-list fxFlex>
     <mat-list-item *ngFor="let dish of dishes" (click)="onSelect(dish)">
