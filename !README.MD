@@ -1241,12 +1241,174 @@
     </div>
       
       
+   mp3   - >   https://youtu.be/fFng8VhutKc https://youtu.be/HAWm0hIYeOI
+    
+               
+#### Create **SideBar** & **LoginForm** component 
+
+    ng g component login
            
+  
+   Import the **Forms Module** in *app.module.ts* by adding the following import:
+   
+    import {MatIconModule, MatSidenavModule} from "@angular/material";
+    import {FormsModule} from "@angular/forms";
+    
+    @NgModule({
+      declarations: [
+      ],
+      imports: [
+        MatSidenavModule,
+        MatButtonModule,
+        MatIconModule,
+        FormsModule
+      ],
    
    
+   Open *header.component.html* & add **Login** button:
    
+    <div style="height: 100vh;">
+    
+      <!-- #1 Navigation bar -->
+      <mat-toolbar>
+        <mat-toolbar-row>
+    
+          <!-- Toggle button -->
+          <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+            <mat-icon>menu</mat-icon>
+          </button>
+    
+          <!-- Logo -->
+          <a routerLink="/home" title="Health Food Store">
+            <img src="/assets/images/logo.svg" alt="Logo" height=30 width=auto>
+          </a>
+    
+          <!-- Fill space between logo and buttons -->
+          <span class="fill-space"></span>
+    
+          <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+          <div fxShow="true" fxHide.lt-md="true">
+    
+            <a mat-button routerLink="/home" routerLinkActive="active"><span class="fa fa-home fa-lg"></span> Home </a>
+            <a mat-button routerLink="/about" routerLinkActive="active"><span class="fa fa-info fa-lg"></span> About </a>
+            <a mat-button routerLink="/menu" routerLinkActive="active"><span class="fa fa-list fa-lg"></span> Menu </a>
+            <a mat-button routerLink="/contact" routerLinkActive="active"><span class="fa fa-address-card fa-lg"></span>
+              Contact </a>
+            <a mat-button (click)="openLoginForm()"><span class="fa fa-sign-in fa-lg"></span> Login </a>
+    
+          </div>
+    
+        </mat-toolbar-row>
+      </mat-toolbar>
+    
+      <!-- #2 Sidebar https://material.angular.io/components/sidenav/overview -->
+      <!--<mat-sidenav-container  >-->
+      <!--<mat-sidenav-container autosize>-->
+      <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav>
+    
+          <mat-nav-list>
+    
+            <a mat-list-item routerLink="/home" routerLinkActive="active">
+              <mat-icon>home</mat-icon> &nbsp;
+              Home
+            </a>
+    
+            <a mat-list-item routerLink="/about" routerLinkActive="active">
+              <mat-icon>info</mat-icon> &nbsp;
+              About
+            </a>
+    
+            <a mat-list-item routerLink="/menu" routerLinkActive="active">
+              <mat-icon>list</mat-icon> &nbsp;
+              Menu
+            </a>
+    
+            <a mat-list-item routerLink="/contact" routerLinkActive="active">
+              <span class="fa fa-address-card fa-lg"></span> &nbsp;
+              Contact
+            </a>
+    
+            <a (click)="openLoginForm()" mat-list-item>
+              <mat-icon> input</mat-icon> &nbsp;
+              Login / SignIn
+            </a>
+    
+            <a (click)="sidenav.toggle()" mat-list-item>
+              <mat-icon>close</mat-icon> &nbsp;
+              Close
+            </a>
+    
+          </mat-nav-list>
+    
+        </mat-sidenav>
+    
+        <!-- Main content Alternative position -->
+        <!--<mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>-->
+        <mat-sidenav-content fxFlexFill>
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    
+    
+      </mat-sidenav-container>
+    
+    </div>
+     
+        
+  
+   Open the template *login.component.html* and adding the following code:
    
+    <mat-toolbar>
+        Login
+      <span class="flex-spacer"></span>
+      <button mat-button mat-dialog-close>&times;</button>
+    </mat-toolbar>
+
+               
+  
+   Open *login.component.ts* and adding the following code:
    
+    import {MatDialog, MatDialogRef} from '@angular/material';
+
+       
+  
+   To make this component be opened from another component, you need to declare this as an **EntryComponent** in the **AppModule** *app.module.ts*, by adding the following to the **NgModule** decorator:
+   
+    import { MatDialogModule } from '@angular/material/dialog';
+    
+    @NgModule({
+    
+      imports: [
+        MatDialogModule,
+      ],
+      
+    entryComponents: [LoginComponent], 
+      
+    })
+
+       
+   To trigger the Dialog view of the **Login component**, open *header.component.ts* and update it as follows:
+   
+    import { MatDialog, MatDialogRef } from '@angular/material';
+    import { LoginComponent } from '../login/login.component';
+    
+    export class HeaderComponent implements OnInit {
+    
+      constructor(public dialog: MatDialog ) { }
+    
+      ngOnInit() {
+      }
+    
+      openLoginForm() {
+        this.dialog.open(LoginComponent, {width: '500px', height: '450px'});
+      }
+    
+    }
+    
+    
+    
+    
+    
             
         
 #### *.gitignore* file

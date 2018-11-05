@@ -32,8 +32,11 @@ import {AboutComponent} from './about/about.component';
 import {HomeComponent} from './home/home.component';
 import {ContactComponent} from './contact/contact.component';
 import {MenuComponent} from './menu/menu.component';
-import { DishdetailComponent } from './dishdetail/dishdetail.component';
-
+import {DishdetailComponent} from './dishdetail/dishdetail.component';
+import {MatIconModule, MatSidenavModule} from "@angular/material";
+import {FormsModule} from "@angular/forms";
+import { LoginComponent } from './login/login.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    DishdetailComponent
+    DishdetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -55,8 +59,13 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatButtonModule
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    MatDialogModule
   ],
+  entryComponents: [LoginComponent],
   providers: [DishService, PromotionService],
   bootstrap: [AppComponent]
 })
